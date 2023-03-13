@@ -4,6 +4,7 @@ import TableData from "@/shared/components/tableData/TableData";
 import { Visibility } from "@mui/icons-material";
 import { Grid, IconButton, Stack, Tooltip, useTheme } from "@mui/material";
 import { GridColDef, GridRowsProp } from "@mui/x-data-grid";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -16,7 +17,7 @@ interface IArticleProps {
   knowledgeArea: string;
 }
 
-export default function Home() {
+const Articles: NextPage = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [articles, setArticles] = useState<IArticleProps[]>([]);
@@ -123,4 +124,6 @@ export default function Home() {
       </Grid>
     </BaseLayout>
   );
-}
+};
+
+export default Articles;
