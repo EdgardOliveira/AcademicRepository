@@ -21,7 +21,7 @@ const Articles: NextPage = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [articles, setArticles] = useState<IArticleProps[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const endpointURL: string = "files";
   const router = useRouter();
 
@@ -45,7 +45,7 @@ const Articles: NextPage = () => {
       author: "Edgard Oliveira, Thiago Lins, João Guilherme",
     },
     {
-      id: 6,
+      id: 4,
       year: "2019",
       title: "iRecycler - Gerenciamento de resíduos",
       author: "Edgard Oliveira, Thiago Lins, Marcos Silva",
