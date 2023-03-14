@@ -1,10 +1,7 @@
 import { Box, Button, Skeleton } from "@mui/material";
 import {
   DataGrid,
-  GridToolbarColumnsButton,
   GridToolbarContainer,
-  GridToolbarDensitySelector,
-  GridToolbarExport,
   GridToolbarFilterButton,
   GridToolbarQuickFilter,
 } from "@mui/x-data-grid";
@@ -34,10 +31,7 @@ const TableData = ({ rows, columns, isLoading, addButton }: ITableProps) => {
   function CustomGridToolbar() {
     return (
       <GridToolbarContainer>
-        {/* <GridToolbarColumnsButton /> */}
         <GridToolbarFilterButton />
-        {/* <GridToolbarDensitySelector /> */}
-        {/* <GridToolbarExport /> */}
         <Button startIcon={<AddIcon />} onClick={addButton}>
           Cadastrar
         </Button>
@@ -47,53 +41,18 @@ const TableData = ({ rows, columns, isLoading, addButton }: ITableProps) => {
   }
 
   return (
-    <Box m="20px">
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: green,
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: blue,
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: grey,
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: blue,
-          },
-          "& .MuiCheckbox-root": {
-            color: `${green} !important`,
-          },
-          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${grey} !important`,
-          },
-        }}
-      >
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSizeOptions={[10, 25, 50, 100]}
-          autoHeight
-          components={{
-            Toolbar: CustomGridToolbar,
-            LoadingOverlay: LoadingSkeleton,
-          }}
-          loading={isLoading}
-          sx={{ minHeight: 600 }}
-        />
-      </Box>
-    </Box>
+    <DataGrid
+      rows={rows}
+      columns={columns}
+      pageSizeOptions={[10, 25, 50, 100]}
+      autoHeight
+      components={{
+        Toolbar: CustomGridToolbar,
+        LoadingOverlay: LoadingSkeleton,
+      }}
+      loading={isLoading}
+      sx={{ minHeight: 350 }}
+    />
   );
 };
 

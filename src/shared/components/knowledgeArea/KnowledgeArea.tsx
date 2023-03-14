@@ -21,7 +21,7 @@ export default function KnowledgeArea() {
   ];
 
   return (
-    <Paper elevation={3}>
+    <Paper>
       <nav aria-label="título">
         <List>
           <ListItem disablePadding>

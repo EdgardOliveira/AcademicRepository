@@ -31,47 +31,65 @@ const Articles: NextPage = () => {
       year: "2023",
       title: "Repositório Acadêmico",
       author: "Edgard Oliveira, Thiago Lins, Marcos Silva",
+      advisor: "Zaida Tavares",
     },
     {
       id: 2,
       year: "2021",
       title: "Dispenser IoT - Gerenciamento de Alcool em Gel",
       author: "Edgard Oliveira, Thiago Lins",
+      advisor: "Josué Froner",
     },
     {
       id: 3,
       year: "2021",
       title: "MedAlert - Gerenciamento de medicamentos",
       author: "Edgard Oliveira, Thiago Lins, João Guilherme",
+      advisor: "Jean Lobo",
     },
     {
       id: 4,
       year: "2019",
       title: "iRecycler - Gerenciamento de resíduos",
       author: "Edgard Oliveira, Thiago Lins, Marcos Silva",
+      advisor: "Aline Moreira",
     },
   ];
 
   const columns: GridColDef[] = [
-    { field: "id", headerName: "ID`s", flex: 0.5, width: 10, align: "right" },
-    { field: "year", headerName: "ANOS", flex: 1, width: 20, align: "center" },
+    { field: "id", headerName: "ID`s", flex: 0.1, width: 1, align: "center" },
+    {
+      field: "year",
+      headerName: "ANOS",
+      flex: 0.3,
+      width: 10,
+      align: "center",
+    },
     {
       field: "title",
       headerName: "TÍTULOS",
-      flex: 1,
+      flex: 1.7,
       width: 150,
       align: "left",
     },
     {
       field: "author",
       headerName: "AUTORES",
-      flex: 1,
-      width: 30,
+      flex: 1.5,
+      width: 150,
+      align: "left",
+    },
+    {
+      field: "advisor",
+      headerName: "ORIENTADORES",
+      flex: 0.8,
+      width: 80,
       align: "left",
     },
     {
       field: "actions",
       headerName: "AÇÕES",
+      flex: 0.4,
       width: 180,
       sortable: false,
       headerAlign: "center",
@@ -111,7 +129,7 @@ const Articles: NextPage = () => {
       subtitle="Trabalhos de conclusão de curso"
     >
       <Grid container spacing={2}>
-        <Grid item xs={10} md={6} sm={4}>
+        <Grid item xl={10} lg={10} md={10} xs={4}>
           <TableData
             rows={rows}
             columns={columns}
@@ -119,8 +137,9 @@ const Articles: NextPage = () => {
             addButton={handleAdd}
           />
         </Grid>
-        <Grid item xs={2} md={1} sm={1}></Grid>
-        <KnowledgeArea />
+        <Grid item xl={2} lg={2} md={2} xs={2}>
+          <KnowledgeArea />
+        </Grid>
       </Grid>
     </BaseLayout>
   );
