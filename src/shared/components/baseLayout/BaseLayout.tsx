@@ -1,9 +1,9 @@
 import { Box, CssBaseline } from "@mui/material";
 import { ReactNode } from "react";
-import { Navbar } from "../navbar/Navbar";
-import { Sidebar } from "../sidebar/Sidebar";
+import { Navbar } from "@/shared/components/navbar/Navbar";
+import { Sidebar } from "@/shared/components/sidebar/Sidebar";
 import { styled } from "@mui/material/styles";
-import Header from "../header/Header";
+import Header from "@/shared/components/header/Header";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",

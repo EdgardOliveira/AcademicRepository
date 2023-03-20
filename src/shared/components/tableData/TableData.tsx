@@ -6,7 +6,6 @@ import {
   GridToolbarQuickFilter,
 } from "@mui/x-data-grid";
 import AddIcon from "@mui/icons-material/Add";
-import { blue, green, grey } from "@mui/material/colors";
 
 const LoadingSkeleton = () => (
   <Box

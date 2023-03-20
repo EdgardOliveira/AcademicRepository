@@ -2,7 +2,19 @@ import { BaseLayout } from "@/shared/components/baseLayout/BaseLayout";
 import KnowledgeArea from "@/shared/components/knowledgeArea/KnowledgeArea";
 import TableData from "@/shared/components/tableData/TableData";
 import { Visibility } from "@mui/icons-material";
-import { Grid, IconButton, Stack, Tooltip, useTheme } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  IconButton,
+  Stack,
+  Tooltip,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { GridColDef, GridRowsProp } from "@mui/x-data-grid";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -18,91 +30,6 @@ interface IArticleProps {
 
 export default function Home() {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [articles, setArticles] = useState<IArticleProps[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const endpointURL: string = "files";
-  const router = useRouter();
-
-  const rows: GridRowsProp = [
-    {
-      id: 1,
-      year: "2023",
-      title: "Repositório Acadêmico",
-      author: "Edgard Oliveira, Thiago Lins, Marcos Silva",
-    },
-    {
-      id: 2,
-      year: "2021",
-      title: "Dispenser IoT - Gerenciamento de Alcool em Gel",
-      author: "Edgard Oliveira, Thiago Lins",
-    },
-    {
-      id: 3,
-      year: "2021",
-      title: "MedAlert - Gerenciamento de medicamentos",
-      author: "Edgard Oliveira, Thiago Lins, João Guilherme",
-    },
-    {
-      id: 6,
-      year: "2019",
-      title: "iRecycler - Gerenciamento de resíduos",
-      author: "Edgard Oliveira, Thiago Lins, Marcos Silva",
-    },
-  ];
-
-  const columns: GridColDef[] = [
-    { field: "id", headerName: "ID`s", flex: 0.5, width: 10, align: "right" },
-    { field: "year", headerName: "ANOS", flex: 1, width: 20, align: "center" },
-    {
-      field: "title",
-      headerName: "TÍTULOS",
-      flex: 1,
-      width: 150,
-      align: "left",
-    },
-    {
-      field: "author",
-      headerName: "AUTORES",
-      flex: 1,
-      width: 30,
-      align: "left",
-    },
-    {
-      field: "actions",
-      headerName: "AÇÕES",
-      width: 180,
-      sortable: false,
-      headerAlign: "center",
-      align: "center",
-
-      renderCell: (params: any) => {
-        const { id } = params.row;
-
-        return (
-          <Stack direction="row" spacing={2}>
-            <Tooltip title="Visualizar">
-              <IconButton
-                aria-label="Visualizar"
-                onClick={() => handleView(String(id))}
-                color={"error"}
-              >
-                <Visibility />
-              </IconButton>
-            </Tooltip>
-          </Stack>
-        );
-      },
-    },
-  ];
-
-  const handleAdd = async () => {
-    router.push(`/${endpointURL}/0`);
-  };
-
-  const handleView = async (id: string) => {
-    router.push(`/${endpointURL}/${id}`);
-  };
 
   return (
     <BaseLayout
@@ -110,16 +37,30 @@ export default function Home() {
       subtitle="Trabalhos de conclusão de curso"
     >
       <Grid container spacing={2}>
-        <Grid item xs={10} md={6} sm={4}>
-          <TableData
-            rows={rows}
-            columns={columns}
-            isLoading={isLoading}
-            addButton={handleAdd}
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            sx={{ height: 110 }}
+            image="logotipo.png"
+            title="logotipo da fametro"
           />
-        </Grid>
-        <Grid item xs={2} md={1} sm={1}></Grid>
-        <KnowledgeArea />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Bem-vindo ao Repositório Acadêmico da FAMETRO.
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              O Repositório Acadêmico (RA) do Faculdade Metropolitana de Manaus
+              (FAMETRO) tem como missão: armazenar, preservar, divulgar e
+              oferecer acesso à produção científica e institucional da FAMETRO.
+              Possui como objetivos: contribuir para o aumento da visibilidade
+              da produção científica da FAMETRO; preservar a memória intelectual
+              da Universidade; reunir em um único local virtual e de forma
+              permanente a produção científica e institucional. Disponibilizar o
+              livre acesso aos conteúdos digitais. Ampliar e facilitar o acesso
+              à produção científica de uma forma geral. O Repositório Acadêmico
+              da FAMETRO é uma iniciativa de acesso aberto e gratuito.
+            </Typography>
+          </CardContent>
+        </Card>
       </Grid>
     </BaseLayout>
   );
