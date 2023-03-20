@@ -22,7 +22,7 @@ const Articles: NextPage = () => {
   const [open, setOpen] = useState(false);
   const [articles, setArticles] = useState<IArticleProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const endpointURL: string = "files";
+  const endpointURL: string = "articles";
   const router = useRouter();
 
   const rows: GridRowsProp = [

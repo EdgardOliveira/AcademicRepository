@@ -13,10 +13,11 @@ import HomeIcon from "@mui/icons-material/Home";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import PeopleIcon from "@mui/icons-material/People";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import ArticleIcon from "@mui/icons-material/Article";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
-import { Environment } from "../../environment";
-import { useSidebarContext } from "../../contexts/SidebarContext";
+import { Environment } from "@/shared/environment";
+import { useSidebarContext } from "@/shared/contexts/SidebarContext";
 import { ReactNode } from "react";
 import Link from "next/link";
 
@@ -76,6 +77,7 @@ interface IMenuProps {
 //itens do menu
 const sidebarMenuItems: Array<IMenuProps> = [
   { title: "Inicial", url: "/", icon: <HomeIcon /> },
+  { title: "Artigos", url: "/articles", icon: <ArticleIcon /> },
   { title: "Áreas de conhecimento", url: "/areas", icon: <PeopleIcon /> },
   { title: "Orientadores", url: "/advisors", icon: <PsychologyIcon /> },
   { title: "Usuários", url: "/users", icon: <AssignmentIndIcon /> },

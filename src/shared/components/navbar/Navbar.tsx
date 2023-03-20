@@ -1,9 +1,9 @@
-import { Environment } from "../../environment";
+import { Environment } from "@/shared/environment";
 import { CardMedia, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { styled } from "@mui/material/styles";
-import { useSidebarContext } from "../../contexts/SidebarContext";
+import { useSidebarContext } from "@/shared/contexts/SidebarContext";
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
