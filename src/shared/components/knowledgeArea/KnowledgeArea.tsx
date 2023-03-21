@@ -8,6 +8,7 @@ import {
   Paper,
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
+import Image from "next/image";
 
 export default function KnowledgeArea() {
   const areas = [
@@ -26,7 +27,7 @@ export default function KnowledgeArea() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText primary="Áreas de conhecimento" align="center" />
+              <ListItemText primary="Áreas de conhecimento" align="center" elevation={1}/>
             </ListItemButton>
           </ListItem>
         </List>
