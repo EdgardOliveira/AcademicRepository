@@ -40,18 +40,27 @@ const TableData = ({ rows, columns, isLoading, addButton }: ITableProps) => {
   }
 
   return (
-    <DataGrid
-      rows={rows}
-      columns={columns}
-      pageSizeOptions={[10, 25, 50, 100]}
-      autoHeight
-      components={{
-        Toolbar: CustomGridToolbar,
-        LoadingOverlay: LoadingSkeleton,
-      }}
-      loading={isLoading}
-      sx={{ minHeight: 350 }}
-    />
+    <>
+      {rows && (
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { pageSize: 5, page: 0 },
+            },
+          }}
+          pageSizeOptions={[5, 10, 15, 20, 25, 50, 100]}
+          autoHeight
+          components={{
+            Toolbar: CustomGridToolbar,
+            LoadingOverlay: LoadingSkeleton,
+          }}
+          loading={isLoading}
+          sx={{ minHeight: 350 }}
+        />
+      )}
+    </>
   );
 };
 
