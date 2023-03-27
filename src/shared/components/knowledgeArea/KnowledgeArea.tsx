@@ -8,9 +8,23 @@ import {
   Paper,
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
-import Image from "next/image";
+import useGetInFetch from "@/shared/hooks/useGetInFetch";
 
-export default function KnowledgeArea() {
+interface IKnowlodgeAreasProps {
+  id: number;
+  name: string;
+  total: number;
+}
+
+export default function KnowledgeAreas() {
+  // const {
+  //   data: areas,
+  //   loading,
+  //   error,
+  // } = useGetInFetch<IKnowlodgeAreasProps[]>("/areas");
+
+  const loading = false;
+  const error = false;
   const areas = [
     { id: 1, name: "Sistemas de Informação", total: 100 },
     { id: 2, name: "Engenharia da Computação", total: 51 },
@@ -35,7 +49,9 @@ export default function KnowledgeArea() {
       <Divider />
       <nav aria-label="lista de áreas">
         <List>
-          {areas.map((area, index) => (
+          {loading && <h1>carregando...</h1>}
+          {error && <h1>ocorreu um erro!</h1>}
+          {areas?.map((area, index) => (
             <ListItem key={index} disablePadding>
               <ListItemButton>
                 <ListItemText primary={area.name} />

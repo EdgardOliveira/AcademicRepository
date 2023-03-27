@@ -1,23 +1,12 @@
 import { BaseLayout } from "@/shared/components/baseLayout/BaseLayout";
-import KnowledgeArea from "@/shared/components/knowledgeArea/KnowledgeArea";
-import TableData from "@/shared/components/tableData/TableData";
-import { Visibility } from "@mui/icons-material";
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   Grid,
-  IconButton,
-  Stack,
-  Tooltip,
   Typography,
   useTheme,
 } from "@mui/material";
-import { GridColDef, GridRowsProp } from "@mui/x-data-grid";
-import { useRouter } from "next/router";
-import { useState } from "react";
 
 interface IArticleProps {
   id: number;
