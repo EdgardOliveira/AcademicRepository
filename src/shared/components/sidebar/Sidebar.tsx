@@ -80,7 +80,7 @@ const sidebarMenuItems: Array<IMenuProps> = [
   { title: "Artigos", url: "/articles", icon: <ArticleIcon /> },
   { title: "Áreas de conhecimento", url: "/areas", icon: <PeopleIcon /> },
   { title: "Orientadores", url: "/advisors", icon: <PsychologyIcon /> },
-  { title: "Usuários", url: "/users", icon: <AssignmentIndIcon /> },
+  { title: "Login", url: "/login", icon: <AssignmentIndIcon /> },
 ];
 
 export const Sidebar = () => {

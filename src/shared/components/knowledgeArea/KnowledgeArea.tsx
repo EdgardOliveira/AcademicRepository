@@ -41,7 +41,7 @@ export default function KnowledgeAreas() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText primary="Áreas de conhecimento" align="center" />
+              <ListItemText primary="Áreas de conhecimento" align="center" elevation={1}/>
             </ListItemButton>
           </ListItem>
         </List>
