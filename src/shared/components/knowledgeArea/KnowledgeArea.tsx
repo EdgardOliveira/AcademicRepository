@@ -8,7 +8,6 @@ import {
   Paper,
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
-import Image from "next/image";
 
 export default function KnowledgeArea() {
   const areas = [
